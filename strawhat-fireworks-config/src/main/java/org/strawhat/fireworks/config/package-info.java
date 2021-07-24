@@ -1,0 +1,1 @@
+package org.strawhat.fireworks.config;
