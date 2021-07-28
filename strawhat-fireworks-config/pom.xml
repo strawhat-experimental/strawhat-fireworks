@@ -28,6 +28,7 @@
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>org.strawhat</groupId>
             <artifactId>strawhat-fireworks-web</artifactId>
@@ -37,6 +38,7 @@
             <groupId>org.strawhat</groupId>
             <artifactId>strawhat-fireworks-rpc</artifactId>
         </dependency>
+
     </dependencies>
 
     

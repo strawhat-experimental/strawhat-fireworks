@@ -28,10 +28,17 @@
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>com.strawhat</groupId>
             <artifactId>strawhat-web</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.strawhat</groupId>
+            <artifactId>strawhat-fireworks-btl</artifactId>
+        </dependency>
+
     </dependencies>
 
     
