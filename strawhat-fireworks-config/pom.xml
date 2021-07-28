@@ -4,9 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.strawhat</groupId>
+        <artifactId>strawhat-fireworks-parent</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
     <groupId>org.strawhat</groupId>
     <artifactId>strawhat-fireworks-config</artifactId>
-    <version>1.0.0</version>
 
     <packaging>jar</packaging>
     <name>Strawhat Fireworks Config</name>
@@ -20,6 +26,18 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.strawhat</groupId>
+            <artifactId>strawhat-fireworks-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.strawhat</groupId>
+            <artifactId>strawhat-fireworks-rpc</artifactId>
+        </dependency>
+    </dependencies>
 
     
 </project>

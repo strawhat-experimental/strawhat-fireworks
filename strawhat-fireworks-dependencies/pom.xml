@@ -6,7 +6,7 @@
 
     <groupId>org.strawhat</groupId>
     <artifactId>strawhat-fireworks-dependencies</artifactId>
-    <version>1.0.0</version>
+    <version>${revision}</version>
 
     <packaging>pom</packaging>
     <name>Strawhat Fireworks Dependencies</name>
@@ -19,7 +19,73 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <strawhat.version>1.0.0</strawhat.version>
+
+        <revision>0.0.1-SNAPSHOT</revision>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>com.strawhat</groupId>
+                <artifactId>strawhat-dependencies</artifactId>
+                <version>${strawhat.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.strawhat</groupId>
+                <artifactId>strawhat-fireworks-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.strawhat</groupId>
+                <artifactId>strawhat-fireworks-dal</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.strawhat</groupId>
+                <artifactId>strawhat-fireworks-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.strawhat</groupId>
+                <artifactId>strawhat-fireworks-social</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.strawhat</groupId>
+                <artifactId>strawhat-fireworks-btl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.strawhat</groupId>
+                <artifactId>strawhat-fireworks-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.strawhat</groupId>
+                <artifactId>strawhat-fireworks-rpc</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.strawhat</groupId>
+                <artifactId>strawhat-fireworks-config</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
 
     
 </project>

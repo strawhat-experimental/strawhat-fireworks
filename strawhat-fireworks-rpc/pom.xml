@@ -12,12 +12,12 @@
     </parent>
 
     <groupId>org.strawhat</groupId>
-    <artifactId>strawhat-fireworks-domain</artifactId>
+    <artifactId>strawhat-fireworks-rpc</artifactId>
 
     <packaging>jar</packaging>
-    <name>Strawhat Fireworks Domain</name>
+    <name>Strawhat Fireworks RPC</name>
     <inceptionYear>2020-Now</inceptionYear>
-    <description>Strawhat Fireworks 领域层</description>
+    <description>Strawhat Fireworks RPC 提供层</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -26,15 +26,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
-
-    <dependencies>
-
-        <dependency>
-            <groupId>org.strawhat</groupId>
-            <artifactId>strawhat-fireworks-dal</artifactId>
-        </dependency>
-
-    </dependencies>
 
     
 </project>

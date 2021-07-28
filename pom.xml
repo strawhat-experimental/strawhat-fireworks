@@ -4,12 +4,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.strawhat</groupId>
-    <artifactId>strawhat-fireworks</artifactId>
-    <version>1.0.0</version>
+    <parent>
+        <groupId>com.strawhat</groupId>
+        <artifactId>strawhat-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
 
-    <packaging>jar</packaging>
-    <name>Strawhat Fireworks</name>
+    <groupId>org.strawhat</groupId>
+    <artifactId>strawhat-fireworks-parent</artifactId>
+    <version>${revision}</version>
+
+    <packaging>pom</packaging>
+    <name>Strawhat Fireworks Parent</name>
     <inceptionYear>2020-Now</inceptionYear>
     <description>Strawhat 领域驱动设计示例</description>
 
@@ -19,6 +25,8 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <revision>0.0.1-SNAPSHOT</revision>
     </properties>
 
     <modules>
@@ -29,8 +37,60 @@
         <module>strawhat-fireworks-social</module>
         <module>strawhat-fireworks-btl</module>
         <module>strawhat-fireworks-web</module>
+        <module>strawhat-fireworks-rpc</module>
         <module>strawhat-fireworks-config</module>
+        <module>strawhat-fireworks</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.strawhat</groupId>
+                <artifactId>strawhat-fireworks-dependencies</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <!-- 测试用例插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <!-- 设置默认跳过测试 -->
+                    <skip>true</skip>
+                    <includes>
+                        <include>**/*Tests.java</include>
+                    </includes>
+                    <excludes>
+                        <exclude>**/Abstract*.java</exclude>
+                    </excludes>
+                    <systemPropertyVariables>
+                        <java.security.egd>file:/dev/./urandom</java.security.egd>
+                        <java.awt.headless>true</java.awt.headless>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
     
 </project>

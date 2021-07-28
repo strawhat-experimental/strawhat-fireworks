@@ -12,12 +12,12 @@
     </parent>
 
     <groupId>org.strawhat</groupId>
-    <artifactId>strawhat-fireworks-domain</artifactId>
+    <artifactId>strawhat-fireworks</artifactId>
 
     <packaging>jar</packaging>
-    <name>Strawhat Fireworks Domain</name>
+    <name>Strawhat Fireworks</name>
     <inceptionYear>2020-Now</inceptionYear>
-    <description>Strawhat Fireworks 领域层</description>
+    <description>Strawhat 领域驱动设计示例</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -28,13 +28,20 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>org.strawhat</groupId>
-            <artifactId>strawhat-fireworks-dal</artifactId>
+            <artifactId>strawhat-fireworks-config</artifactId>
         </dependency>
-
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
     
 </project>
